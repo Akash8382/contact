@@ -8,23 +8,23 @@ import jakarta.persistence.*;
 @Entity
 
 public class Contact {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	
+	 private int cid;
+     private String name;
+     private String second_name;
+     private String work;
+     private String email;
+     private String phone;
+     private String description;
     
-    private int cid;
-   
-
-	private String name;
-    private String second_name;
-    private String work;
-    private String email;
-    private String phone;
-    private String description;
     @ManyToOne(fetch=FetchType.LAZY)
     
-    private U user1;
+ private U user1;
 
-    public Contact(int cid, String name, String second_name, String work, String email, String phone, String description) {
+ public Contact(int cid, String name, String second_name, String work, String email, String phone, String description) {
         this.cid = cid;
         this.name = name;
         this.second_name = second_name;
@@ -58,31 +58,35 @@ public class Contact {
         return second_name;
     }
 
-    public void setSecond_name(String second_name) {
+    public void setSecond_name(String second_name){
         this.second_name = second_name;
     }
 
-    public String getWork() {
+    public String getWork(){
         return work;
     }
 
-    public void setWork(String work) {
+    public void setWork(String work){
+    	
         this.work = work;
+        
     }
 
-    public String getEmail() {
+    public String getEmail(){
+    	
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail(String email){
+    	
         this.email = email;
     }
 
-    public String getPhone() {
+    public String getPhone(){
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(String phone){
         this.phone = phone;
     }
 
@@ -94,11 +98,11 @@ public class Contact {
         this.description = description;
     }
 
-    public U getUser() {
+    public U getUser(){
         return user1;
     }
 
-    public void setUser(U user1) {
+    public void setUser(U user1){
         this.user1 = user1;
     }
 	@Override
