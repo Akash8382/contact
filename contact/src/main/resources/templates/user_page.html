@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Sidebar</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif;">
+
+    <!-- Sidebar -->
+    <div style="height: 100vh; width: 250px; position: fixed; background-color: #333; color: white; padding: 20px;">
+        <h2 style="margin-top: 0; color: #f1f1f1;">Sidebar</h2>
+        <a th:href="@{/user/contact}" style="text-decoration: none; color: white; display: block; margin: 10px 0;">Add</a>
+        <a th:href="@{/user/contact/get/all}" style="text-decoration: none; color: white; display: block; margin: 10px 0;">View</a>
+        <a href="#" style="text-decoration: none; color: white; display: block; margin: 10px 0;">Services</a>
+        <a href="#" style="text-decoration: none; color: white; display: block; margin: 10px 0;">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div style="margin-left: 250px; padding: 20px;">
+        <h1>Welcome to My Website</h1>
+        <p>This is the main content area. Adjust the content as needed!</p>
+    </div>
+
+</body>
+</html>
