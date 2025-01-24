@@ -1,19 +1,18 @@
-package com.smart.contact;
+package com.smart.contact.controll;
 
+import com.smart.contact.U;
+import com.smart.contact.UsreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 //import com.smart.contact.s1.UserServiceimpl;
 
-import ch.qos.logback.classic.Logger;
 
 @Controller
 public class Main {

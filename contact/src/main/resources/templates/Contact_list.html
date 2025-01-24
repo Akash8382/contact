@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Contact List</title>
 </head>
 <body style="font-family: Arial, sans-serif; margin: 20px;">
 
-    <h1 style="text-align: center;">Contact Table</h1>
+<h1 style="text-align: center;">Contact Table</h1>
 
-    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
-        <thead>
-            <tr style="background-color: #f4f4f4; text-align: left;">
-                <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
-                <th style="padding: 10px; border: 1px solid #ddd;">Mobile_no</th>
-                <th style="padding: 10px; border: 1px solid #ddd;">Price</th>
-                <th style="padding: 10px; border: 1px solid #ddd;">Category</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="product : ${con}" 
-               >
-                <td style="padding: 10px; border: 1px solid #ddd;" th:text="${product.name}"></td>
-                <td style="padding: 10px; border: 1px solid #ddd;" th:text="${product.phone}"></td>
-                
-            </tr>
-        </tbody>
-    </table>
+<table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+    <thead>
+    <tr style="background-color: #f4f4f4; text-align: left;">
+        <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+        <th style="padding: 10px; border: 1px solid #ddd;">Mobile No</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterating over the content of the page -->
+    <tr th:each="product : ${con.content}">
+        <td style="padding: 10px; border: 1px solid #ddd;" th:text="${product.name}"></td>
+        <td style="padding: 10px; border: 1px solid #ddd;" th:text="${product.phone}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div style="text-align: center; margin-top: 20px;">
+    <!-- Previous button -->
+    <a th:if="${currentPage > 0}"
+       th:href="@{/user/contact/get/all(page=${currentPage - 1}, size=${5})}">Previous</a>
+
+    <!-- Page indicator -->
+    <span>Page <span th:text="${currentPage + 1}"></span> of <span th:text="${totalPages}"></span></span>
+
+    <!-- Next button -->
+    <a th:if="${currentPage + 1 < totalPages}"
+       th:href="@{/user/contact/get/all(page=${currentPage + 1}, size=${5})}">Next</a>
+</div>
 
 </body>
 </html>

@@ -22,8 +22,8 @@ class ContactApplicationTests {
 	public List<Contact> con(){
 		 String name= "A@gmail.com";
 			U cu= repo.findByEmail(name);
-		var v=r.findByUser1(cu);
-		return v;
+		//var v=r.findByUser1(cu);
+		//return v;
 		
 	}
 
